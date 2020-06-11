@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalaryHike Calculator</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+    <style>
+        
+        #mobilescreen{
+            display: none;
+        }
+        .navbar {
+            height: 4rem;
+        }
+        footer {
+            height: 3rem;
+        }
+
+        .card-header{
+            height: 1.8rem;
+            padding: 0.1rem;
+        }
+
+        .btn-primary{
+            height: 1.8rem;
+            padding: 0;
+        }
+
+        #sec1answer,
+        #sec2answer,
+        #sec3answer,
+        #sec4answer,
+        #mobsec1answer,
+        #mobsec2answer,
+        #mobsec3answer,
+        #mobsec4answer{
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        #otherscreen{
+            width: 45vw;
+            min-height: 50vh;
+        }
+
+
+
+      
+            @media(max-width: 768px){
+
+                #otherscreen{
+                    display: none;
+                   
+                }
+                body{
+                    height:auto!important;
+                    /* min-height: -webkit-fill-available; */
+                }
+                #mobilescreen{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    width: 80vw;
+                    
+                } 
+
+                #navtitle{
+                    font-size: 1.5rem;
+                }
+            }
+           
+        
+        
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+         <div class="container text-center p-0">
+             <h3 id="navtitle" class="navbar-text mx-auto">SALARY HIKE CALCULATOR</h3>
+         </div>
+    </nav>
+    <br><br>
+    
+
+    <div id="otherscreen" class="wholeform container">
+        <div class="row">
+            <div id="section1" class="search card card-body col-md-6">
+                <h5 class="mb-3 text-center card-header">Find New Salary </h5>
+                <div class="row">
+                   
+                    <div class="col-md-6">
+                        <h5 class="mb-3">Current Salary</h5>
+                        <h5 class="mb-3">Hike %</h5>
+                        
+                 
+                    </div>
+                    <div class="col-md-6">
+                       
+                        <input id="sec1inp1" type="number" class="form-control mb-1">
+                        <input id="sec1inp2"type="number" class="form-control mb-1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    
+                    <input id="submitsection1" type="submit" class="form-control btn-primary mb-3 mt-2" value="CALCULATE">
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mt-1"><strong>New Salary</strong></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="sec1answer" type="number" readonly class="form-control mb-1">
+                    </div>
+                </div>
+            </div>
+
+            <div id="section2" class="search card card-body col-md-6 bg-light">
+                <h5 class="mb-3 text-center card-header">Find Hike %</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mb-3">Current Salary</h5>
+                        <h5 class="mb-3">Increment</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="sec2inp1" type="number" class="form-control mb-1">
+                        <input id="sec2inp2" type="number" class="form-control mb-1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    
+                    <input id="submitsection2" type="submit" class="form-control btn-primary mb-3 mt-2" value="CALCULATE">
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mt-1"><strong>Hike %</strong></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="sec2answer" type="number" readonly class="form-control mb-1">
+                    </div>
+                </div>
+            </div>
+           
+            <div id="section3" class="search card card-body col-md-6 bg-light">
+                <h5 class="mb-3 text-center card-header">Find Increment</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mb-3">Current Salary</h5>
+                        <h5 class="mb-3">Hike %</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="sec3inp1" type="number" class="form-control mb-1">
+                        <input id="sec3inp2" type="number" class="form-control mb-1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    
+                    <input id="submitsection3" type="submit" class="form-control btn-primary mb-3 mt-2" value="CALCULATE">
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mt-1"><strong>Increment</strong></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="sec3answer" type="number" readonly class="form-control mb-1">
+                    </div>
+                </div>
+            </div>
+            <div id="section4" class="search card card-body col-md-6">
+                <h5 class="mb-3 text-center card-header">Find Hike %</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mb-3">Current Salary</h5>
+                        <h5 class="mb-3">New Salary</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="sec4inp1" type="number" class="form-control mb-1">
+                        <input id="sec4inp2" type="number" class="form-control mb-1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    
+                    <input id="submitsection4" type="submit" class="form-control btn-primary mb-3 mt-2" value="CALCULATE">
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mt-1"><strong>Hike %</strong></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="sec4answer" type="number" readonly class="form-control mb-1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+         
+    
+      
+    </div>
+
+    <!-- below html only for mobile screens -->
+
+
+    <div id="mobilescreen" class="mobileform container">
+        <div class="row">
+            <div id="section1" class="search card card-body col-md-6">
+                <h5 class="mb-3 text-center card-header">Find New Salary </h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mb-2">Current Salary</h5>
+                        <input id="mobsec1inp1" type="number" class="form-control mb-2">
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="mb-2">Hike %</h5>
+                        <input id="mobsec1inp2" type="number" class="form-control mb-1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input id="submitsection1" type="submit" class="form-control btn-primary mb-3 mt-2" value="CALCULATE">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mt-1"><strong>New Salary</strong></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="mobsec1answer" type="number" class="form-control mb-1">
+                    </div>
+                </div>
+            </div>
+
+            <div id="section2" class="search card card-body col-md-6 bg-light">
+                <h5 class="mb-3 text-center card-header">Find Hike %</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mb-2">Current Salary</h5>
+                        <input id="mobsec2inp1" type="number" class="form-control mb-2">
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="mb-2">Increment</h5>
+                        <input id="mobsec2inp2" type="number" class="form-control mb-1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    
+                    <input id="submitsection2" type="submit" class="form-control btn-primary mb-3 mt-2" value="CALCULATE">
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mt-1"><strong>Hike %</strong></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="mobsec2answer" type="number" class="form-control mb-1">
+                    </div>
+                </div>
+            </div>
+           
+            <div id="section3" class="search card card-body col-md-6">
+                <h5 class="mb-3 text-center card-header">Find Increment</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mb-2">Current Salary</h5>
+                        <input id="mobsec3inp1" type="number" class="form-control mb-2">
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="mb-2">Hike %</h5>
+                        <input id="mobsec3inp2" type="number" class="form-control mb-1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    
+                    <input id="submitsection3" type="submit" class="form-control btn-primary mb-3 mt-2" value="CALCULATE">
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mt-1"><strong>Increment</strong></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="mobsec3answer" type="number" class="form-control mb-1">
+                    </div>
+                </div>
+            </div>
+            <div id="section4" class="search card card-body col-md-6 bg-light">
+                <h5 class="mb-3 text-center card-header">Find Hike %</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mb-2">Current Salary</h5>
+                        <input id="mobsec4inp1" type="number" class="form-control mb-2">
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="mb-2">New Salary</h5>
+                        <input id="mobsec4inp2" type="number" class="form-control mb-1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    
+                    <input id="submitsection4" type="submit" class="form-control btn-primary mb-3 mt-2" value="CALCULATE">
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mt-1"><strong>Hike %</strong></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="mobsec4answer" type="number" class="form-control mb-1">
+                    </div>
+                </div>
+            </div>
+            <!-- below is end of row -->
+        </div>
+              <!-- below is end of containers -->
+    </div>
+    
+         
+
+        <footer class="mt-5 p-3 text-center bg-dark page-footer text-muted">
+            Copyrights &copy; to Karthikeyan Ganesan 2020
+        </footer>
+
+
+
+
+   
+
+    <!-- end of body content and script tags starts -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
